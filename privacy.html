@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WatchDog Privacy Policy</title>
+<style>
+  :root {
+    --ink: #2b2118;
+    --muted: #7a6a5d;
+    --hairline: #e8ded0;
+    --bg: #fffaf3;
+    --accent: #E07A5F;
+    --chip: #f6efe4;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, "PingFang TC", "Noto Sans TC", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    font-size: 16px;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 40px 0 12px;
+    padding-top: 24px;
+    border-top: 1px solid var(--hairline);
+  }
+  h2:first-of-type { border-top: none; padding-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 24px 0 8px;
+    color: var(--ink);
+  }
+  p { margin: 0 0 16px; }
+  ul {
+    margin: 0 0 16px;
+    padding-left: 22px;
+  }
+  li { margin-bottom: 6px; }
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease;
+  }
+  a:hover { border-bottom-color: var(--accent); }
+  code {
+    background: var(--chip);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.92em;
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+  }
+  .meta {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+  .lede {
+    background: var(--chip);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin: 0 0 32px;
+  }
+  .lede p:last-child { margin-bottom: 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 15px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--hairline);
+    vertical-align: top;
+  }
+  th {
+    background: var(--chip);
+    font-weight: 600;
+  }
+  .footer {
+    color: var(--muted);
+    font-size: 13px;
+    font-style: italic;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--hairline);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #f2ece4;
+      --muted: #a2968a;
+      --hairline: #35302a;
+      --bg: #1b1815;
+      --chip: #262220;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>WatchDog Privacy Policy</h1>
+<p class="meta"><strong>Last updated:</strong> August 2, 2026</p>
+
+<p>WatchDog (the "App") is developed and maintained by Spock Hsueh. It turns two iPhones into a baby and pet monitor: one device watches the crib or play area, the other lets you check in. Because the App handles a live camera and microphone feed of your home, we designed it so that <strong>the video and audio never leave your control</strong>.</p>
+
+<div class="lede">
+  <p><strong>The short version.</strong> Video and audio are <strong>never recorded, never stored, and never uploaded to us</strong>. On your home network they travel directly between your two devices. When you are away from home they travel over an end-to-end encrypted connection; the relay server that may forward them can only see encrypted bytes. We do not operate any server that can view your camera.</p>
+</div>
+
+<h2>1. Information We Collect</h2>
+
+<h3>1.1 Camera and Microphone (Never Stored)</h3>
+<p>The App requires camera and microphone access on the monitoring device to function. This live feed is:</p>
+<ul>
+  <li><strong>Never written to disk</strong> on either device — frames are captured, encoded, transmitted, displayed, and discarded</li>
+  <li><strong>Never uploaded</strong> to our servers or any cloud storage — we operate no video infrastructure</li>
+  <li>Transmitted only while you are actively viewing; when nobody is watching, the App does not encode or send anything</li>
+</ul>
+<p>There is no recording feature, no playback history, and no snapshot storage in the App.</p>
+
+<h3>1.2 On-Device Analysis (Never Leaves the Device)</h3>
+<p>To detect crying, barking, movement, and sleeping position, the App analyzes the camera and microphone feed <strong>entirely on the device</strong> using Apple's built-in Vision and SoundAnalysis frameworks. No images, audio, or biometric data are sent anywhere for analysis. Only the <em>conclusion</em> (for example, "crying detected at 02:13") may be shared as described in section 1.4.</p>
+<p>The App does not perform facial recognition or identify individuals. Face detection is used solely to determine whether a face is visible in frame, which powers the "may have rolled over" alert.</p>
+
+<h3>1.3 Account Information</h3>
+<p>Remote alerts and away-from-home viewing are <strong>optional features</strong>. If you enable them, you sign in with <strong>Sign in with Apple</strong>, and we store via Firebase:</p>
+<ul>
+  <li>An anonymous Firebase user ID</li>
+  <li>Your family group membership and role, plus the invite code used to join</li>
+  <li>Push notification tokens for the devices that should receive alerts</li>
+</ul>
+<p>We do not request or store your email address or phone number. If you use these features, the App works fully without an account, limited to your home network.</p>
+
+<h3>1.4 Alert Metadata</h3>
+<p>If you enable remote alerts, the App records short event entries so notifications can be delivered to your family members:</p>
+<ul>
+  <li>Event type (crying, barking, large movement, left the safe zone, and similar)</li>
+  <li>A confidence value, the monitoring device's name, and a timestamp</li>
+</ul>
+<p>These entries contain <strong>no images and no audio</strong> — they are the textual equivalent of "crying detected at 02:13."</p>
+
+<h3>1.5 Connection Setup Data</h3>
+<p>To establish an away-from-home connection, the two devices briefly exchange technical connection descriptors (WebRTC session descriptions and network candidates, which include your devices' IP addresses). These records are <strong>deleted as soon as the connection is established</strong> and contain no media.</p>
+
+<h3>1.6 Diagnostic Data</h3>
+<ul>
+  <li><strong>Firebase Crashlytics</strong>: crash reports (stack traces, device model, iOS version)</li>
+  <li><strong>Firebase Analytics</strong>: anonymous aggregate usage (app launches, screen views, feature usage) — never includes camera, audio, or alert content</li>
+</ul>
+<p>Performance logs used to evaluate overnight stability (temperature, frame rate, connection state) are written to the App's local storage on your own device and are <strong>never transmitted</strong>.</p>
+
+<h3>1.7 What We Do <em>Not</em> Collect</h3>
+<ul>
+  <li>Any recording, still image, or audio clip of your child, pet, or home</li>
+  <li>Email address, phone number, or real name</li>
+  <li>Location data, contacts, or photo library access</li>
+  <li>Facial recognition data, biometric identifiers, or health data</li>
+  <li>Advertising identifiers — the App contains no ads and no third-party trackers</li>
+</ul>
+
+<h2>2. Where Your Data Lives</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data Type</th>
+      <th>Storage / Path</th>
+      <th>Can We Access?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Live video &amp; audio</td>
+      <td>In transit only — direct between your devices, or end-to-end encrypted relay</td>
+      <td>❌ Never stored, never viewable</td>
+    </tr>
+    <tr>
+      <td>Detection analysis (crying, movement, position)</td>
+      <td>On device, in memory</td>
+      <td>❌ No</td>
+    </tr>
+    <tr>
+      <td>Pairing code, safe-zone settings, preferences</td>
+      <td>Local device (Keychain / app storage)</td>
+      <td>❌ No</td>
+    </tr>
+    <tr>
+      <td>Performance logs</td>
+      <td>Local device only</td>
+      <td>❌ No</td>
+    </tr>
+    <tr>
+      <td>Account, family membership, push tokens</td>
+      <td>Google Firebase (only if you enable remote alerts)</td>
+      <td>✅ Yes — technical records, no media</td>
+    </tr>
+    <tr>
+      <td>Alert metadata</td>
+      <td>Google Firebase (only if you enable remote alerts)</td>
+      <td>✅ Yes — event type &amp; time, no media</td>
+    </tr>
+    <tr>
+      <td>Encrypted relay traffic (away from home)</td>
+      <td>Cloudflare TURN — forwards encrypted bytes, retains no content</td>
+      <td>❌ Encrypted; not readable by us or Cloudflare</td>
+    </tr>
+    <tr>
+      <td>Crash &amp; anonymous usage reports</td>
+      <td>Google Firebase</td>
+      <td>✅ Aggregate only</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>We <strong>do not operate our own media server</strong>. No video or audio from your home ever passes through, is stored on, or is backed up to any system we control.</p>
+
+<h2>3. How Your Video Is Protected</h2>
+<ul>
+  <li><strong>At home</strong>: the two devices connect directly over your local network. The connection is authenticated with a 6-digit pairing code shown on the monitoring device and encrypted with ChaCha20-Poly1305, so other devices on the same Wi-Fi cannot connect or eavesdrop.</li>
+  <li><strong>Away from home</strong>: the connection uses WebRTC with DTLS encryption. If the two networks cannot connect directly, traffic is forwarded by a Cloudflare TURN relay, which can only see encrypted bytes — not your video or audio.</li>
+  <li><strong>Access control</strong>: away-from-home connections are restricted to members of your family group. Someone who is not in your family cannot discover or request a connection.</li>
+</ul>
+
+<h2>4. Third-Party Service Policies</h2>
+<p>The App uses the following third-party services. Please refer to their privacy policies for details:</p>
+<ul>
+  <li><strong>Apple (Sign in with Apple, push notifications)</strong>: <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></li>
+  <li><strong>Google Firebase (Authentication, Firestore, Cloud Messaging, Crashlytics, Analytics)</strong>: <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a></li>
+  <li><strong>Cloudflare (TURN relay)</strong>: <a href="https://www.cloudflare.com/privacypolicy/">cloudflare.com/privacypolicy</a></li>
+</ul>
+
+<h2>5. Children's Data</h2>
+<p>While WatchDog is used to watch over infants and young children, <strong>the App is not directed at children</strong>. Its users are caregivers — parents, grandparents, and other adults. The camera is operated by you as the legal guardian, and the resulting video is never stored or transmitted to us.</p>
+<p>The App does <strong>not</strong>:</p>
+<ul>
+  <li>Store, upload, or retain any imagery or audio of a child</li>
+  <li>Perform facial recognition or build any profile of a child</li>
+  <li>Share any data with advertisers or data brokers — the App contains no advertising</li>
+  <li>Use any data about your child for training, analytics, or commercial purposes</li>
+</ul>
+<p>Under COPPA (U.S. Children's Online Privacy Protection Act) and GDPR-K guidelines, WatchDog is classified as a "parenting tool" rather than a children's service.</p>
+
+<h2>6. Your Rights</h2>
+<ul>
+  <li><strong>Use without an account</strong>: all home-network monitoring, detection, and alerts work with no sign-in at all</li>
+  <li><strong>Revoke camera or microphone access</strong>: iOS → Settings → WatchDog — the App stops capturing immediately</li>
+  <li><strong>Leave or delete your family group</strong>: sign out in the App's Settings tab; to have your account and all associated records deleted, contact us at the address below</li>
+  <li><strong>Stop remote alerts</strong>: disable notifications for WatchDog in iOS Settings, or sign out to remove your push tokens</li>
+  <li><strong>Delete everything</strong>: uninstalling the App removes all local data, including performance logs and stored pairing codes</li>
+</ul>
+
+<h2>7. Data Retention</h2>
+<ul>
+  <li><strong>Video and audio</strong>: never retained — discarded immediately after display</li>
+  <li><strong>Connection setup records</strong>: deleted as soon as the connection is established</li>
+  <li><strong>Account &amp; family membership</strong>: retained until you request deletion</li>
+  <li><strong>Alert metadata</strong>: retained to power the alert history; deleted with your account on request</li>
+  <li><strong>Crash &amp; anonymous usage reports</strong>: per Google Firebase default policy (auto-deleted after 14 months)</li>
+</ul>
+
+<h2>8. Security</h2>
+<ul>
+  <li>Home-network connections are authenticated with a pairing code and encrypted with ChaCha20-Poly1305</li>
+  <li>Away-from-home connections are encrypted with DTLS; relay servers cannot decrypt the contents</li>
+  <li>Pairing codes are stored in the iOS Keychain</li>
+  <li>Access to family data is enforced by server-side security rules — only members of a family can read its records</li>
+  <li>All communication with Firebase and Cloudflare is over HTTPS/TLS</li>
+</ul>
+
+<h2>9. Changes to This Policy</h2>
+<p>If we make material changes to this policy, we will update this page and revise the "Last updated" date. For substantive privacy changes (such as adding a new third-party service), we will display an in-app notice.</p>
+
+<h2>10. Contact Us</h2>
+<p>For any privacy questions or to exercise your data rights, including account deletion, please contact:</p>
+<p>📧 <a href="mailto:spock.hsu@gmail.com"><strong>spock.hsu@gmail.com</strong></a></p>
+
+<p class="footer">This policy is provided in English. Translated versions, if any, are for reference only; the English text controls in case of discrepancy.</p>
+
+</div>
+</body>
+</html>
