@@ -1,0 +1,107 @@
+WatchDog Privacy Policy
+Last updated: August 2, 2026
+WatchDog (the "App") is developed and maintained by Spock Hsueh. It turns two iPhones into a baby and pet monitor: one device watches the crib or play area, the other lets you check in. Because the App handles a live camera and microphone feed of your home, we designed it so that the video and audio never leave your control.
+The short version. Video and audio are never recorded, never stored, and never uploaded to us. On your home network they travel directly between your two devices. When you are away from home they travel over an end-to-end encrypted connection; the relay server that may forward them can only see encrypted bytes. We do not operate any server that can view your camera.
+1. Information We Collect
+1.1 Camera and Microphone (Never Stored)
+The App requires camera and microphone access on the monitoring device to function. This live feed is:
+	•	Never written to disk on either device — frames are captured, encoded, transmitted, displayed, and discarded
+	•	Never uploaded to our servers or any cloud storage — we operate no video infrastructure
+	•	Transmitted only while you are actively viewing; when nobody is watching, the App does not encode or send anything
+There is no recording feature, no playback history, and no snapshot storage in the App.
+1.2 On-Device Analysis (Never Leaves the Device)
+To detect crying, barking, movement, and sleeping position, the App analyzes the camera and microphone feed entirely on the device using Apple's built-in Vision and SoundAnalysis frameworks. No images, audio, or biometric data are sent anywhere for analysis. Only the conclusion (for example, "crying detected at 02:13") may be shared as described in section 1.4.
+The App does not perform facial recognition or identify individuals. Face detection is used solely to determine whether a face is visible in frame, which powers the "may have rolled over" alert.
+1.3 Account Information
+Remote alerts and away-from-home viewing are optional features. If you enable them, you sign in with Sign in with Apple, and we store via Firebase:
+	•	An anonymous Firebase user ID
+	•	Your family group membership and role, plus the invite code used to join
+	•	Push notification tokens for the devices that should receive alerts
+We do not request or store your email address or phone number. If you use these features, the App works fully without an account, limited to your home network.
+1.4 Alert Metadata
+If you enable remote alerts, the App records short event entries so notifications can be delivered to your family members:
+	•	Event type (crying, barking, large movement, left the safe zone, and similar)
+	•	A confidence value, the monitoring device's name, and a timestamp
+These entries contain no images and no audio — they are the textual equivalent of "crying detected at 02:13."
+1.5 Connection Setup Data
+To establish an away-from-home connection, the two devices briefly exchange technical connection descriptors (WebRTC session descriptions and network candidates, which include your devices' IP addresses). These records are deleted as soon as the connection is established and contain no media.
+1.6 Diagnostic Data
+	•	Firebase Crashlytics: crash reports (stack traces, device model, iOS version)
+	•	Firebase Analytics: anonymous aggregate usage (app launches, screen views, feature usage) — never includes camera, audio, or alert content
+Performance logs used to evaluate overnight stability (temperature, frame rate, connection state) are written to the App's local storage on your own device and are never transmitted.
+1.7 What We Do Not Collect
+	•	Any recording, still image, or audio clip of your child, pet, or home
+	•	Email address, phone number, or real name
+	•	Location data, contacts, or photo library access
+	•	Facial recognition data, biometric identifiers, or health data
+	•	Advertising identifiers — the App contains no ads and no third-party trackers
+2. Where Your Data Lives
+Data Type
+Storage / Path
+Can We Access?
+Live video & audio
+In transit only — direct between your devices, or end-to-end encrypted relay
+❌ Never stored, never viewable
+Detection analysis (crying, movement, position)
+On device, in memory
+❌ No
+Pairing code, safe-zone settings, preferences
+Local device (Keychain / app storage)
+❌ No
+Performance logs
+Local device only
+❌ No
+Account, family membership, push tokens
+Google Firebase (only if you enable remote alerts)
+✅ Yes — technical records, no media
+Alert metadata
+Google Firebase (only if you enable remote alerts)
+✅ Yes — event type & time, no media
+Encrypted relay traffic (away from home)
+Cloudflare TURN — forwards encrypted bytes, retains no content
+❌ Encrypted; not readable by us or Cloudflare
+Crash & anonymous usage reports
+Google Firebase
+✅ Aggregate only
+We do not operate our own media server. No video or audio from your home ever passes through, is stored on, or is backed up to any system we control.
+3. How Your Video Is Protected
+	•	At home: the two devices connect directly over your local network. The connection is authenticated with a 6-digit pairing code shown on the monitoring device and encrypted with ChaCha20-Poly1305, so other devices on the same Wi-Fi cannot connect or eavesdrop.
+	•	Away from home: the connection uses WebRTC with DTLS encryption. If the two networks cannot connect directly, traffic is forwarded by a Cloudflare TURN relay, which can only see encrypted bytes — not your video or audio.
+	•	Access control: away-from-home connections are restricted to members of your family group. Someone who is not in your family cannot discover or request a connection.
+4. Third-Party Service Policies
+The App uses the following third-party services. Please refer to their privacy policies for details:
+	•	Apple (Sign in with Apple, push notifications): apple.com/legal/privacy
+	•	Google Firebase (Authentication, Firestore, Cloud Messaging, Crashlytics, Analytics): firebase.google.com/support/privacy
+	•	Cloudflare (TURN relay): cloudflare.com/privacypolicy
+5. Children's Data
+While WatchDog is used to watch over infants and young children, the App is not directed at children. Its users are caregivers — parents, grandparents, and other adults. The camera is operated by you as the legal guardian, and the resulting video is never stored or transmitted to us.
+The App does not:
+	•	Store, upload, or retain any imagery or audio of a child
+	•	Perform facial recognition or build any profile of a child
+	•	Share any data with advertisers or data brokers — the App contains no advertising
+	•	Use any data about your child for training, analytics, or commercial purposes
+Under COPPA (U.S. Children's Online Privacy Protection Act) and GDPR-K guidelines, WatchDog is classified as a "parenting tool" rather than a children's service.
+6. Your Rights
+	•	Use without an account: all home-network monitoring, detection, and alerts work with no sign-in at all
+	•	Revoke camera or microphone access: iOS → Settings → WatchDog — the App stops capturing immediately
+	•	Leave or delete your family group: sign out in the App's Settings tab; to have your account and all associated records deleted, contact us at the address below
+	•	Stop remote alerts: disable notifications for WatchDog in iOS Settings, or sign out to remove your push tokens
+	•	Delete everything: uninstalling the App removes all local data, including performance logs and stored pairing codes
+7. Data Retention
+	•	Video and audio: never retained — discarded immediately after display
+	•	Connection setup records: deleted as soon as the connection is established
+	•	Account & family membership: retained until you request deletion
+	•	Alert metadata: retained to power the alert history; deleted with your account on request
+	•	Crash & anonymous usage reports: per Google Firebase default policy (auto-deleted after 14 months)
+8. Security
+	•	Home-network connections are authenticated with a pairing code and encrypted with ChaCha20-Poly1305
+	•	Away-from-home connections are encrypted with DTLS; relay servers cannot decrypt the contents
+	•	Pairing codes are stored in the iOS Keychain
+	•	Access to family data is enforced by server-side security rules — only members of a family can read its records
+	•	All communication with Firebase and Cloudflare is over HTTPS/TLS
+9. Changes to This Policy
+If we make material changes to this policy, we will update this page and revise the "Last updated" date. For substantive privacy changes (such as adding a new third-party service), we will display an in-app notice.
+10. Contact Us
+For any privacy questions or to exercise your data rights, including account deletion, please contact:
+📧 spock.hsu@gmail.com
+This policy is provided in English. Translated versions, if any, are for reference only; the English text controls in case of discrepancy.
