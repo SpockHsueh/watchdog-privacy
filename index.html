@@ -122,12 +122,12 @@
 <div class="container">
 
 <h1>WatchDog Privacy Policy</h1>
-<p class="meta"><strong>Last updated:</strong> August 2, 2026</p>
+<p class="meta"><strong>Last updated:</strong> August 3, 2026</p>
 
 <p>WatchDog (the "App") is developed and maintained by Spock Hsueh. It turns two iPhones into a baby and pet monitor: one device watches the crib or play area, the other lets you check in. Because the App handles a live camera and microphone feed of your home, we designed it so that <strong>the video and audio never leave your control</strong>.</p>
 
 <div class="lede">
-  <p><strong>The short version.</strong> Video and audio are <strong>never recorded, never stored, and never uploaded to us</strong>. On your home network they travel directly between your two devices. When you are away from home they travel over an end-to-end encrypted connection; the relay server that may forward them can only see encrypted bytes. We do not operate any server that can view your camera.</p>
+  <p><strong>The short version.</strong> Video and audio are <strong>never uploaded to us</strong> — we operate no server that can view your camera. By default nothing is recorded at all. If you choose to turn on Event Clips, short clips are saved <strong>only on your own device</strong> and are never transmitted anywhere. On your home network the live feed travels directly between your two devices; when you are away it travels over an end-to-end encrypted connection, and the relay server that may forward it can only see encrypted bytes.</p>
 </div>
 
 <h2>1. Information We Collect</h2>
@@ -135,11 +135,24 @@
 <h3>1.1 Camera and Microphone (Never Stored)</h3>
 <p>The App requires camera and microphone access on the monitoring device to function. This live feed is:</p>
 <ul>
-  <li><strong>Never written to disk</strong> on either device — frames are captured, encoded, transmitted, displayed, and discarded</li>
   <li><strong>Never uploaded</strong> to our servers or any cloud storage — we operate no video infrastructure</li>
+  <li><strong>Not written to disk by default</strong> — frames are captured, encoded, transmitted, displayed, and discarded</li>
   <li>Transmitted only while you are actively viewing; when nobody is watching, the App does not encode or send anything</li>
 </ul>
-<p>There is no recording feature, no playback history, and no snapshot storage in the App.</p>
+
+<h3>1.1b Event Clips (Off by Default)</h3>
+<p>You may optionally enable <strong>Event Clips</strong> in Settings. When enabled, the App saves a short clip (roughly 30 seconds before and after an alert such as crying or a possible roll-over) so you can review what happened. Two formats are available:</p>
+<ul>
+  <li><strong>Outline</strong>: a low-resolution character-grid animation that shows movement and posture but contains no recognizable image of a person</li>
+  <li><strong>Video</strong>: the full camera image</li>
+</ul>
+<p>In both cases the clips are:</p>
+<ul>
+  <li><strong>Stored only on the device that recorded them</strong> — they are never uploaded, never sent to us, and never pass through any server</li>
+  <li>Automatically deleted according to the retention period and storage limit you choose (3 / 7 / 30 days; 200 MB / 500 MB / 1 GB)</li>
+  <li>Deletable at any time — "Clear all" in Settings, or by uninstalling the App</li>
+</ul>
+<p>Event Clips are <strong>disabled by default</strong>. If you never turn them on, nothing is ever recorded.</p>
 
 <h3>1.2 On-Device Analysis (Never Leaves the Device)</h3>
 <p>To detect crying, barking, movement, and sleeping position, the App analyzes the camera and microphone feed <strong>entirely on the device</strong> using Apple's built-in Vision and SoundAnalysis frameworks. No images, audio, or biometric data are sent anywhere for analysis. Only the <em>conclusion</em> (for example, "crying detected at 02:13") may be shared as described in section 1.4.</p>
@@ -195,11 +208,16 @@
     <tr>
       <td>Live video &amp; audio</td>
       <td>In transit only — direct between your devices, or end-to-end encrypted relay</td>
-      <td>❌ Never stored, never viewable</td>
+      <td>❌ Never uploaded, never viewable by us</td>
     </tr>
     <tr>
       <td>Detection analysis (crying, movement, position)</td>
       <td>On device, in memory</td>
+      <td>❌ No</td>
+    </tr>
+    <tr>
+      <td>Event Clips (optional, off by default)</td>
+      <td>Local device only — the recording device's own storage</td>
       <td>❌ No</td>
     </tr>
     <tr>
@@ -253,10 +271,10 @@
 </ul>
 
 <h2>5. Children's Data</h2>
-<p>While WatchDog is used to watch over infants and young children, <strong>the App is not directed at children</strong>. Its users are caregivers — parents, grandparents, and other adults. The camera is operated by you as the legal guardian, and the resulting video is never stored or transmitted to us.</p>
+<p>While WatchDog is used to watch over infants and young children, <strong>the App is not directed at children</strong>. Its users are caregivers — parents, grandparents, and other adults. The camera is operated by you as the legal guardian, and the resulting video is never transmitted to us. If you enable Event Clips, the clips remain solely on your own device.</p>
 <p>The App does <strong>not</strong>:</p>
 <ul>
-  <li>Store, upload, or retain any imagery or audio of a child</li>
+  <li>Upload, transmit, or retain on our systems any imagery or audio of a child</li>
   <li>Perform facial recognition or build any profile of a child</li>
   <li>Share any data with advertisers or data brokers — the App contains no advertising</li>
   <li>Use any data about your child for training, analytics, or commercial purposes</li>
@@ -269,12 +287,14 @@
   <li><strong>Revoke camera or microphone access</strong>: iOS → Settings → WatchDog — the App stops capturing immediately</li>
   <li><strong>Leave or delete your family group</strong>: sign out in the App's Settings tab; to have your account and all associated records deleted, contact us at the address below</li>
   <li><strong>Stop remote alerts</strong>: disable notifications for WatchDog in iOS Settings, or sign out to remove your push tokens</li>
-  <li><strong>Delete everything</strong>: uninstalling the App removes all local data, including performance logs and stored pairing codes</li>
+  <li><strong>Turn off or delete Event Clips</strong>: Settings → Event Clips → set to Off (which also deletes existing clips), or "Clear all"</li>
+  <li><strong>Delete everything</strong>: uninstalling the App removes all local data, including any Event Clips, performance logs, and stored pairing codes</li>
 </ul>
 
 <h2>7. Data Retention</h2>
 <ul>
-  <li><strong>Video and audio</strong>: never retained — discarded immediately after display</li>
+  <li><strong>Live video and audio</strong>: never retained — discarded immediately after display</li>
+  <li><strong>Event Clips</strong> (if enabled): kept on your device only, deleted automatically per your chosen retention period and storage limit</li>
   <li><strong>Connection setup records</strong>: deleted as soon as the connection is established</li>
   <li><strong>Account &amp; family membership</strong>: retained until you request deletion</li>
   <li><strong>Alert metadata</strong>: retained to power the alert history; deleted with your account on request</li>
