@@ -122,74 +122,80 @@
 <div class="container">
 
 <h1>Custos Privacy Policy</h1>
-<p class="meta"><strong>Last updated:</strong> August 3, 2026</p>
+<p class="meta"><strong>Last updated:</strong> October 6, 2026</p>
 
-<p>Custos (the "App") is developed and maintained by Spock Hsueh. It turns two iPhones into a baby and pet monitor: one device watches the crib or play area, the other lets you check in. Because the App handles a live camera and microphone feed of your home, we designed it so that <strong>the video and audio never leave your control</strong>.</p>
+<p>Custos (the "App") is developed and maintained by Spock Hsueh. It turns two iPhones or iPads into a monitor for a baby, a pet, or an elderly family member: one device is the camera, the other is the viewer you carry with you. Because the App handles a live camera and microphone feed of your home, we designed it so that <strong>the video and audio never leave your control</strong>.</p>
 
 <div class="lede">
-  <p><strong>The short version.</strong> Video and audio are <strong>never uploaded to us</strong> — we operate no server that can view your camera. By default nothing is recorded at all. If you choose to turn on Event Clips, short clips are saved <strong>only on your own device</strong> and are never transmitted anywhere. On your home network the live feed travels directly between your two devices; when you are away it travels over an end-to-end encrypted connection, and the relay server that may forward it can only see encrypted bytes.</p>
+  <p><strong>The short version.</strong> Live video and audio are <strong>never uploaded to us</strong> — we operate no server that can view your camera. Event Clips are saved <strong>only on the camera device</strong>, and are sent only to your own viewer devices when you open them, always encrypted. On your home network the live feed travels directly between your devices; when you are away it travels over an end-to-end encrypted connection, and the relay server that may forward it can only see encrypted bytes.</p>
 </div>
 
 <h2>1. Information We Collect</h2>
 
-<h3>1.1 Camera and Microphone (Never Stored)</h3>
-<p>The App requires camera and microphone access on the monitoring device to function. This live feed is:</p>
+<h3>1.1 Camera and Microphone (Live Feed Never Stored by Us)</h3>
+<p>The App requires camera and microphone access on the camera device to function. The live feed is:</p>
 <ul>
   <li><strong>Never uploaded</strong> to our servers or any cloud storage — we operate no video infrastructure</li>
-  <li><strong>Not written to disk by default</strong> — frames are captured, encoded, transmitted, displayed, and discarded</li>
-  <li>Transmitted only while you are actively viewing; when nobody is watching, the App does not encode or send anything</li>
+  <li>Transmitted only to your own paired viewer devices, and only while someone is watching</li>
+  <li>Not recorded, except for the optional Event Clips and overnight time-lapse described in 1.2</li>
 </ul>
 
-<h3>1.1b Event Clips (Off by Default)</h3>
-<p>You may optionally enable <strong>Event Clips</strong> in Settings. When enabled, the App saves a short clip (roughly 30 seconds before and after an alert such as crying or a possible roll-over) so you can review what happened. Two formats are available:</p>
+<h3>1.2 Event Clips and Overnight Time-Lapse</h3>
+<p>When an alert happens (for example crying or a possible roll-over), the App saves a short clip covering about 30 seconds before and after it, so you can review what happened. It can also save an overnight time-lapse. Formats:</p>
 <ul>
-  <li><strong>Outline</strong>: a low-resolution character-grid animation that shows movement and posture but contains no recognizable image of a person</li>
-  <li><strong>Video</strong>: the full camera image</li>
+  <li><strong>Outline</strong> (on by default): a low-resolution character-grid animation that shows movement and posture but contains no recognizable image of a person. The overnight time-lapse always uses this format.</li>
+  <li><strong>Video</strong> (Plus plan, off by default): the full camera image, without audio</li>
+  <li><strong>Off</strong>: nothing is saved, and existing clips are deleted</li>
 </ul>
-<p>In both cases the clips are:</p>
+<p>Clips are:</p>
 <ul>
-  <li><strong>Stored only on the device that recorded them</strong> — they are never uploaded, never sent to us, and never pass through any server</li>
-  <li>Automatically deleted according to the retention period and storage limit you choose (3 / 7 / 30 days; 200 MB / 500 MB / 1 GB)</li>
-  <li>Deletable at any time — "Clear all" in Settings, or by uninstalling the App</li>
+  <li><strong>Stored only on the camera device that recorded them</strong> — never uploaded to us, never stored on any server</li>
+  <li>Sent to your own viewer device only when you open one, over the same encrypted connection as the live feed. Video clips can only be opened on the same home network. Outline clips can also be opened when you are away; in that case they may pass through the encrypted relay described in section 3, which cannot read them.</li>
+  <li>Automatically deleted according to your plan and the retention period and storage limit you choose (1 hour on Standard; up to 30 days on Plus; 200 MB / 500 MB / 1 GB). The overnight time-lapse is kept for 48 hours.</li>
+  <li>Deletable at any time in Settings, or by uninstalling the App</li>
 </ul>
-<p>Event Clips are <strong>disabled by default</strong>. If you never turn them on, nothing is ever recorded.</p>
 
-<h3>1.2 On-Device Analysis (Never Leaves the Device)</h3>
-<p>To detect crying, barking, movement, and sleeping position, the App analyzes the camera and microphone feed <strong>entirely on the device</strong> using Apple's built-in Vision and SoundAnalysis frameworks. No images, audio, or biometric data are sent anywhere for analysis. Only the <em>conclusion</em> (for example, "crying detected at 02:13") may be shared as described in section 1.4.</p>
+<h3>1.3 On-Device Analysis (Never Leaves the Device)</h3>
+<p>To detect crying, barking, meowing, calls for help, movement, possible falls, and sleeping position, the App analyzes the camera and microphone feed <strong>entirely on the device</strong> using Apple's built-in Vision and SoundAnalysis frameworks. No images, audio, or biometric data are sent anywhere for analysis. Only the <em>conclusion</em> (for example, "crying detected at 02:13") may be shared as described in section 1.5.</p>
 <p>The App does not perform facial recognition or identify individuals. Face detection is used solely to determine whether a face is visible in frame, which powers the "may have rolled over" alert.</p>
 
-<h3>1.3 Account Information</h3>
-<p>Remote alerts and away-from-home viewing are <strong>optional features</strong>. If you enable them, you sign in with <strong>Sign in with Apple</strong>, and we store via Firebase:</p>
+<h3>1.4 Account Information</h3>
+<p>The viewer signs in with <strong>Sign in with Apple</strong>. The camera device and invited guests do not sign in; they receive a limited credential from your viewer. Through Google Firebase we store:</p>
 <ul>
-  <li>An anonymous Firebase user ID</li>
-  <li>Your family group membership and role, plus the invite code used to join</li>
+  <li>A Firebase user ID</li>
+  <li>Your name, if you choose to share it with Sign in with Apple</li>
+  <li>Your family pairing code, so your other viewer devices can join automatically. Only a one-way hash of the code is used for pairing; the code itself is readable only by your own devices.</li>
+  <li>The list of your paired devices (device name and a random device identifier) and guest invitations</li>
   <li>Push notification tokens for the devices that should receive alerts</li>
+  <li>Your subscription tier (Standard or Plus), so your other devices and our relay quota know which features apply. Payment is handled entirely by Apple; we never see your payment details.</li>
 </ul>
-<p>We do not request or store your email address or phone number. If you use these features, the App works fully without an account, limited to your home network.</p>
+<p>We do not request your email address or phone number through sign-in.</p>
 
-<h3>1.4 Alert Metadata</h3>
-<p>If you enable remote alerts, the App records short event entries so notifications can be delivered to your family members:</p>
+<h3>1.5 Alert Metadata</h3>
+<p>To deliver notifications to your family, the App records short event entries:</p>
 <ul>
-  <li>Event type (crying, barking, large movement, left the safe zone, and similar)</li>
-  <li>A confidence value, the monitoring device's name, and a timestamp</li>
+  <li>Event type (crying, barking, large movement, left the safe zone, possible fall, and similar)</li>
+  <li>A confidence value, the camera device's name, and a timestamp</li>
 </ul>
 <p>These entries contain <strong>no images and no audio</strong> — they are the textual equivalent of "crying detected at 02:13."</p>
 
-<h3>1.5 Connection Setup Data</h3>
-<p>To establish an away-from-home connection, the two devices briefly exchange technical connection descriptors (WebRTC session descriptions and network candidates, which include your devices' IP addresses). These records are <strong>deleted as soon as the connection is established</strong> and contain no media.</p>
+<h3>1.6 Connection Data</h3>
+<p>To establish an away-from-home connection, the devices briefly exchange technical connection descriptors (WebRTC session descriptions and network candidates, which include your devices' IP addresses). These records are <strong>deleted as soon as the connection is established</strong> and contain no media. We also keep a monthly total of how much relay traffic your account used, so we can enforce the relay quota of your plan.</p>
 
-<h3>1.6 Diagnostic Data</h3>
+<h3>1.7 Feedback You Send Us</h3>
+<p>If you send feedback from the App, we receive your message, the email address you choose to enter (optional), your app version, device model, system version, app language, role, plan, and Firebase user ID. We use this only to respond to you and fix problems.</p>
+
+<h3>1.8 Diagnostic Data</h3>
 <ul>
   <li><strong>Firebase Crashlytics</strong>: crash reports (stack traces, device model, iOS version)</li>
   <li><strong>Firebase Analytics</strong>: anonymous aggregate usage (app launches, screen views, feature usage) — never includes camera, audio, or alert content</li>
+  <li><strong>Diagnostic logs you upload</strong>: the App keeps a technical log on your device (connection state, detection values, temperature, frame rate). It is sent to us <strong>only if you tap Upload</strong> in Settings, so we can investigate a problem you reported. It contains no images or audio. Uploaded logs are stored in Firebase Storage under a support code derived from your account.</li>
 </ul>
-<p>Performance logs used to evaluate overnight stability (temperature, frame rate, connection state) are written to the App's local storage on your own device and are <strong>never transmitted</strong>.</p>
 
-<h3>1.7 What We Do <em>Not</em> Collect</h3>
+<h3>1.9 What We Do <em>Not</em> Collect</h3>
 <ul>
-  <li>Any recording, still image, or audio clip of your child, pet, or home</li>
-  <li>Email address, phone number, or real name</li>
-  <li>Location data, contacts, or photo library access</li>
+  <li>Any recording, still image, or audio clip of your child, pet, or home on our systems</li>
+  <li>Phone number, location data, contacts, or photo library access</li>
   <li>Facial recognition data, biometric identifiers, or health data</li>
   <li>Advertising identifiers — the App contains no ads and no third-party trackers</li>
 </ul>
@@ -211,34 +217,34 @@
       <td>❌ Never uploaded, never viewable by us</td>
     </tr>
     <tr>
-      <td>Detection analysis (crying, movement, position)</td>
+      <td>Detection analysis</td>
       <td>On device, in memory</td>
       <td>❌ No</td>
     </tr>
     <tr>
-      <td>Event Clips (optional, off by default)</td>
-      <td>Local device only — the recording device's own storage</td>
+      <td>Event Clips &amp; overnight time-lapse</td>
+      <td>The camera device's own storage; sent encrypted to your viewer only when you open one</td>
       <td>❌ No</td>
     </tr>
     <tr>
-      <td>Pairing code, safe-zone settings, preferences</td>
-      <td>Local device (Keychain / app storage)</td>
+      <td>Safe-zone settings &amp; preferences</td>
+      <td>Local device</td>
       <td>❌ No</td>
     </tr>
     <tr>
-      <td>Performance logs</td>
-      <td>Local device only</td>
-      <td>❌ No</td>
-    </tr>
-    <tr>
-      <td>Account, family membership, push tokens</td>
-      <td>Google Firebase (only if you enable remote alerts)</td>
+      <td>Account, family pairing code, device list, guest invitations, push tokens, subscription tier</td>
+      <td>Google Firebase</td>
       <td>✅ Yes — technical records, no media</td>
     </tr>
     <tr>
       <td>Alert metadata</td>
-      <td>Google Firebase (only if you enable remote alerts)</td>
+      <td>Google Firebase</td>
       <td>✅ Yes — event type &amp; time, no media</td>
+    </tr>
+    <tr>
+      <td>Feedback &amp; uploaded diagnostic logs</td>
+      <td>Google Firebase (only when you send them)</td>
+      <td>✅ Yes — no media</td>
     </tr>
     <tr>
       <td>Encrypted relay traffic (away from home)</td>
@@ -253,25 +259,25 @@
   </tbody>
 </table>
 
-<p>We <strong>do not operate our own media server</strong>. No video or audio from your home ever passes through, is stored on, or is backed up to any system we control.</p>
+<p>We <strong>do not operate our own media server</strong>. No video or audio from your home is ever stored on, or backed up to, any system we control.</p>
 
 <h2>3. How Your Video Is Protected</h2>
 <ul>
-  <li><strong>At home</strong>: the two devices connect directly over your local network. The connection is authenticated with a 6-digit pairing code shown on the monitoring device and encrypted with ChaCha20-Poly1305, so other devices on the same Wi-Fi cannot connect or eavesdrop.</li>
-  <li><strong>Away from home</strong>: the connection uses WebRTC with DTLS encryption. If the two networks cannot connect directly, traffic is forwarded by a Cloudflare TURN relay, which can only see encrypted bytes — not your video or audio.</li>
-  <li><strong>Access control</strong>: away-from-home connections are restricted to members of your family group. Someone who is not in your family cannot discover or request a connection.</li>
+  <li><strong>At home</strong>: the devices connect directly over your local network. The connection is authenticated with an 8-character family code, shown on the viewer and entered once on the camera, and encrypted with ChaCha20-Poly1305, so other devices on the same Wi-Fi cannot connect or eavesdrop.</li>
+  <li><strong>Away from home</strong>: the connection uses WebRTC with DTLS encryption. If the two networks cannot connect directly, traffic is forwarded by a Cloudflare TURN relay, which can only see encrypted bytes — not your video, audio, or clips.</li>
+  <li><strong>Access control</strong>: only devices you paired with your family code, and guests you invited, can connect. Guests can watch and receive alerts but cannot change settings, open Event Clips, or use two-way talk.</li>
 </ul>
 
 <h2>4. Third-Party Service Policies</h2>
 <p>The App uses the following third-party services. Please refer to their privacy policies for details:</p>
 <ul>
-  <li><strong>Apple (Sign in with Apple, push notifications)</strong>: <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></li>
-  <li><strong>Google Firebase (Authentication, Firestore, Cloud Messaging, Crashlytics, Analytics)</strong>: <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a></li>
+  <li><strong>Apple (Sign in with Apple, push notifications, in-app purchase)</strong>: <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></li>
+  <li><strong>Google Firebase (Authentication, Firestore, Cloud Functions, Cloud Storage, Cloud Messaging, Crashlytics, Analytics)</strong>: <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a></li>
   <li><strong>Cloudflare (TURN relay)</strong>: <a href="https://www.cloudflare.com/privacypolicy/">cloudflare.com/privacypolicy</a></li>
 </ul>
 
 <h2>5. Children's Data</h2>
-<p>While Custos is used to watch over infants and young children, <strong>the App is not directed at children</strong>. Its users are caregivers — parents, grandparents, and other adults. The camera is operated by you as the legal guardian, and the resulting video is never transmitted to us. If you enable Event Clips, the clips remain solely on your own device.</p>
+<p>While Custos is used to watch over infants and young children, <strong>the App is not directed at children</strong>. Its users are caregivers — parents, grandparents, and other adults. The camera is operated by you as the legal guardian, and the resulting video is never transmitted to us. Event Clips remain on your own devices.</p>
 <p>The App does <strong>not</strong>:</p>
 <ul>
   <li>Upload, transmit, or retain on our systems any imagery or audio of a child</li>
@@ -283,30 +289,31 @@
 
 <h2>6. Your Rights</h2>
 <ul>
-  <li><strong>Use without an account</strong>: all home-network monitoring, detection, and alerts work with no sign-in at all</li>
+  <li><strong>Delete your account in the App</strong>: Settings → Delete Account. This permanently deletes your account, family pairing code, device list, guest invitations, alert history, uploaded diagnostic logs, and feedback from our systems, and revokes your Sign in with Apple authorization. Deleting your account does not cancel your subscription; manage that in your Apple Account settings.</li>
   <li><strong>Revoke camera or microphone access</strong>: iOS → Settings → Custos — the App stops capturing immediately</li>
-  <li><strong>Leave or delete your family group</strong>: sign out in the App's Settings tab; to have your account and all associated records deleted, contact us at the address below</li>
-  <li><strong>Stop remote alerts</strong>: disable notifications for Custos in iOS Settings, or sign out to remove your push tokens</li>
-  <li><strong>Turn off or delete Event Clips</strong>: Settings → Event Clips → set to Off (which also deletes existing clips), or "Clear all"</li>
-  <li><strong>Delete everything</strong>: uninstalling the App removes all local data, including any Event Clips, performance logs, and stored pairing codes</li>
+  <li><strong>Sign out</strong>: Settings → Sign Out removes this device's push token</li>
+  <li><strong>Stop notifications</strong>: disable notifications for Custos in iOS Settings</li>
+  <li><strong>Turn off or delete Event Clips</strong>: Settings → Event Clips → Off (which also deletes existing clips)</li>
+  <li><strong>Delete local data</strong>: uninstalling the App removes all data stored on that device, including Event Clips and logs</li>
+  <li><strong>Other requests</strong>: to access or correct your data, contact us at the address below</li>
 </ul>
 
 <h2>7. Data Retention</h2>
 <ul>
   <li><strong>Live video and audio</strong>: never retained — discarded immediately after display</li>
-  <li><strong>Event Clips</strong> (if enabled): kept on your device only, deleted automatically per your chosen retention period and storage limit</li>
+  <li><strong>Event Clips</strong>: kept on the camera device only, deleted automatically per your plan, retention period, and storage limit; time-lapse after 48 hours</li>
   <li><strong>Connection setup records</strong>: deleted as soon as the connection is established</li>
-  <li><strong>Account &amp; family membership</strong>: retained until you request deletion</li>
-  <li><strong>Alert metadata</strong>: retained to power the alert history; deleted with your account on request</li>
+  <li><strong>Account, device list, alert metadata, relay usage totals</strong>: kept until you delete your account</li>
+  <li><strong>Feedback and uploaded diagnostic logs</strong>: kept until the issue is resolved, and deleted when you delete your account</li>
   <li><strong>Crash &amp; anonymous usage reports</strong>: per Google Firebase default policy (auto-deleted after 14 months)</li>
 </ul>
 
 <h2>8. Security</h2>
 <ul>
-  <li>Home-network connections are authenticated with a pairing code and encrypted with ChaCha20-Poly1305</li>
+  <li>Home-network connections are authenticated with the family code and encrypted with ChaCha20-Poly1305</li>
   <li>Away-from-home connections are encrypted with DTLS; relay servers cannot decrypt the contents</li>
-  <li>Pairing codes are stored in the iOS Keychain</li>
-  <li>Access to family data is enforced by server-side security rules — only members of a family can read its records</li>
+  <li>The family code is stored in the iOS Keychain on your devices</li>
+  <li>Access to account data is enforced by server-side security rules — each account can only read its own records, and camera and guest devices only get the access they need</li>
   <li>All communication with Firebase and Cloudflare is over HTTPS/TLS</li>
 </ul>
 
